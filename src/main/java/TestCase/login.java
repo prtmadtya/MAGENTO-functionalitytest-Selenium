@@ -1,5 +1,6 @@
 package TestCase;
 import Config.env_;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,7 +16,7 @@ public class login extends env_ {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         //set url
-        driver.get(baseurl);
+        driver.get(BaseUrl);
         Duration duration = Duration.ofSeconds(10);
         WebDriverWait wait = new WebDriverWait(driver, duration);
         wait.until(
