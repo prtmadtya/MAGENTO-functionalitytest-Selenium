@@ -18,7 +18,7 @@ public class createAccountpages {
     By inputPassword = By.id("password");
     By inputConfirmPassword = By.id("password-confirmation");
 
-    By createBtn = By.xpath("//input [@type='submit']");
+    By createBtn = By.xpath("//*[@id='form-validate']/div/div[1]/button");
 
     //Method input data
     public void setInputFistName (String fistName){
@@ -38,7 +38,7 @@ public class createAccountpages {
     }
 
     //Method click button create account
-    public void setCreateBtn(){
+    public void clickCreateBtn(){
         driver.findElement(createBtn).click();
     }
 }

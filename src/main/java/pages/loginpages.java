@@ -12,7 +12,7 @@ public class loginpages {
     //locator
     By email = By.id("email");
     By password = By.id("pass");
-    By signInbtn = By.xpath("//input[@type='submit']");
+    By signInbtn = By.xpath("//*[@id=\"send2\"]");
     //method input
     public void inputEmail (String emailaddress){
         driver.findElement(email).sendKeys(emailaddress);
