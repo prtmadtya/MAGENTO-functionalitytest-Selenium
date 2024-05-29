@@ -12,12 +12,7 @@ import java.time.Duration;
 
 public class CreateAccount extends env_ {
     @Test
-    public void createAccount() {
-        //set driver location path
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        //set url
+    public void createAccount() throws InterruptedException {
         driver.get(BaseUrl);
         Duration duration = Duration.ofSeconds(10);
         WebDriverWait wait = new WebDriverWait(driver, duration);
@@ -27,17 +22,14 @@ public class CreateAccount extends env_ {
         home.clickCreateAcc();
         //create create account pages
         createAccountpages create = new createAccountpages(driver);
-
         //Input Valid Data register/signup
         create.setInputFistName("Aditya");
         create.setInputLastName("Pratama");
-        create.setInputEmail("testing@mailsec.com");
-        create.setInputPassword("pass123");
-        create.setInputConfirmPassword("pass123");
-
+        create.setInputEmail("aditya1995.jr@gmail.com");
+        create.setInputPassword("reyshaka@#$_&030723");
+        create.setInputConfirmPassword("reyshaka@#$_&030723");
         //click button create account
         create.clickCreateBtn();
-
-        driver.quit();
+        Thread.sleep(3000);
     }
 }

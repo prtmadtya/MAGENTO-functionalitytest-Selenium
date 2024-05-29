@@ -12,27 +12,28 @@ import java.time.Duration;
 
 public class login extends env_ {
     @Test
-    public void main() {
-        //set driver location path
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+    public void validLogin() {
         //set url
         driver.get(BaseUrl);
-        Duration duration = Duration.ofSeconds(10);
-        WebDriverWait wait = new WebDriverWait(driver, duration);
         //create home object
         homepages home = new homepages(driver);
         home.clickLogin();
-
         //create login object
         loginpages login = new loginpages(driver);
-        login.inputEmail("testing@mailsec.com");
-        login.inputPass("pass123");
+        //input valid information
+        login.inputEmail("aditya1995.jr@gmail.com");
+        login.inputPass("reyshaka@#$_&030723");
         //click login button
         login.setSignInbtn();
-
-        driver.quit();
-
+    }
+    @Test
+    public void invalidLogin() {
+        driver.get(BaseUrl);
+        homepages home = new homepages(driver);
+        home.clickLogin();
+        loginpages login = new loginpages(driver);
+        //input invalid information
+        login.inputEmail("");
+        login.inputPass("reyshaka@#$_&030723");
     }
 }
