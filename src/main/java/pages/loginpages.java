@@ -13,6 +13,7 @@ public class loginpages {
     By email = By.id("email");
     By password = By.id("pass");
     By signInbtn = By.xpath("//*[@id=\"send2\"]");
+
     //method input
     public void inputEmail (String emailaddress){
         driver.findElement(email).sendKeys(emailaddress);
@@ -24,5 +25,4 @@ public class loginpages {
     public void setSignInbtn(){
         driver.findElement(signInbtn).click();
     }
-
 }

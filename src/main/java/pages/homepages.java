@@ -11,10 +11,13 @@ public class homepages {
     }
     //locator for create account
     By createAcc = By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[3]/a");
-    //locator for Login
     By loginBtn = By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/a");
+    By heading = By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[1]/span");
 
-    By Heading = By.xpath("//a[contains(@href,'store logo')]");
+    public String getHeading(){
+        String head = driver.findElement(heading).getText();
+        return head;
+    }
 
     //method to click createAcc
     public void clickCreateAcc() {
@@ -23,8 +26,5 @@ public class homepages {
     public  void clickLogin() {
         driver.findElement(loginBtn).click();
     }
-    public String getHeading() {
-        String head = driver.findElement(Heading).getText();
-        return head;
-    }
+
 }
