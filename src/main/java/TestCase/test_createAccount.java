@@ -43,11 +43,11 @@ public class test_createAccount extends env_ {
         create.setInputPasswordData("reyshaka@#$_&030723", "reyshaka@#$_&030723");
         //click button create account
         create.clickCreateBtn();
-
+        Thread.sleep(5000);
         //verify error email already registered
         WebElement message = driver.findElement(By.xpath("//*[@id='maincontent']/div[2]/div[2]/div/div/div"));
         String emailExist = message.getText();
         assertEquals("There is already an account with this email address. If you are sure that it is your email address, click here to get your password and access your account.", emailExist);
-        Thread.sleep(5000);
+
     }
 }

@@ -11,6 +11,8 @@ import pages.collectionpages;
 import pages.homepages;
 import pages.loginpages;
 
+import static org.junit.Assert.assertEquals;
+
 public class test_search_Item extends env_ {
     @Test
     public void searchItemTest() throws InterruptedException {
