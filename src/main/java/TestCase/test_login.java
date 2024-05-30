@@ -3,8 +3,14 @@ import Config.env_;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.homepages;
 import pages.loginpages;
+
+import java.awt.*;
+import java.time.Duration;
+
 import static org.junit.Assert.assertEquals;
 
 public class test_login extends env_ {
@@ -22,28 +28,33 @@ public class test_login extends env_ {
         login.inputPass("reyshaka@#$_&030723");
         //click login button
         login.setSignInbtn();
-        Thread.sleep(3000);
+        Thread.sleep(4000);
         //Capture the page heading and print on console
-        System.out.println("The page heading is --- " +home.getHeading());
+        System.out.println("Test Passed: " +home.getHeading()+" "+"is Displayed");
     }
     @Test
     public void loginWithoutEmail() throws InterruptedException {
         driver.get(BaseUrl);
             homepages home = new homepages(driver);
             loginpages login = new loginpages(driver);
-            //Click halaman login
+            //Click sign in
             home.clickLogin();
             //input Password
             login.inputPass("reyshaka@#$_&030723");
             //click login button
             login.setSignInbtn();
-            //verify require email should be filled
-            WebElement message = driver.findElement(By.id("email-error"));
-            String value = message.getText();
-            assertEquals("This is a required field.", value);
-        Thread.sleep(3000);
+            Thread.sleep(3000);
+                //verify require email should be filled
+                WebElement failedmessage = driver.findElement(By.id("email-error"));
+                String value = failedmessage.getText();
+                assertEquals("This is a required field.", value);
+                String successLogin = home.getHeading();
+                if (value.equalsIgnoreCase(successLogin))
+                    System.out.println("Test Failed: login success");
+                else {
+                    System.out.println("Test Passed: email required");
+                }
     }
-
     @Test
     public void loginWithInvalidEmail() throws InterruptedException {
         driver.get(BaseUrl);
@@ -57,11 +68,17 @@ public class test_login extends env_ {
         login.inputPass("reyshaka@#$_&030723");
         //click login button
         login.setSignInbtn();
-        //verify error email format
-        WebElement message = driver.findElement(By.id("email-error"));
-        String invalidEmail = message.getText();
-        assertEquals("Please enter a valid email address (Ex: johndoe@domain.com).", invalidEmail);
         Thread.sleep(5000);
+        //verify error email format
+        WebElement failedmessage = driver.findElement(By.id("email-error"));
+        String invalidEmail = failedmessage.getText();
+        assertEquals("Please enter a valid email address (Ex: johndoe@domain.com).", invalidEmail);
+        String successLogin = home.getHeading();
+        if (invalidEmail.equalsIgnoreCase(successLogin))
+            System.out.println("Test Failed: login success");
+        else {
+            System.out.println("Test Passed: valid email required");
+        }
     }
 
     @Test
@@ -82,5 +99,11 @@ public class test_login extends env_ {
         String emailNotRegistered = message.getText();
         assertEquals("The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.", emailNotRegistered);
         Thread.sleep(5000);
+        String successLogin = home.getHeading();
+        if (emailNotRegistered.equalsIgnoreCase(successLogin))
+            System.out.println("Test Failed: login success");
+        else {
+            System.out.println("Test Passed: Email not registered");
+        }
     }
 }

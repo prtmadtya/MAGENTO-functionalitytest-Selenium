@@ -21,22 +21,18 @@ public class createAccountpages {
     By createBtn = By.xpath("//*[@id='form-validate']/div/div[1]/button");
 
     //Method input data
-    public void setInputFistName (String fistName){
-        driver.findElement(inputFistName).sendKeys(fistName);
-    }
-    public void setInputLastName (String lastName){
+    public void setInputNameData (String firstName, String lastName){
+        driver.findElement(inputFistName).sendKeys(firstName);
         driver.findElement(inputLastName).sendKeys(lastName);
     }
     public void setInputEmail(String email){
         driver.findElement(inputEmail).sendKeys(email);
     }
-    public void setInputPassword(String password){
+    public void setInputPasswordData (String password, String confirmPassword){
         driver.findElement(inputPassword).sendKeys(password);
-    }
-    public void setInputConfirmPassword(String confirmPassword){
         driver.findElement(inputConfirmPassword).sendKeys(confirmPassword);
-    }
 
+    }
     //Method click button create account
     public void clickCreateBtn(){
         driver.findElement(createBtn).click();

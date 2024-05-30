@@ -15,11 +15,10 @@ public class homepages {
     By heading = By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[1]/span");
 
     public String getHeading(){
-        String head = driver.findElement(heading).getText();
+        String head = driver.findElement(heading).getText(); //assert success get welcome massage
         return head;
     }
-
-    //method to click createAcc
+    //method to click
     public void clickCreateAcc() {
         driver.findElement(createAcc).click();
     }

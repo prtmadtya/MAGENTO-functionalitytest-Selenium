@@ -20,11 +20,9 @@ public class test_createAccount extends env_ {
         createAccountpages create = new createAccountpages(driver);
 
         //Input Valid Data register/signup
-        create.setInputFistName("Aditya");
-        create.setInputLastName("Pratama");
+        create.setInputNameData ("Aditya", "Pratama");
         create.setInputEmail("aditya1995.jr@gmail.com");
-        create.setInputPassword("reyshaka@#$_&030723");
-        create.setInputConfirmPassword("reyshaka@#$_&030723");
+        create.setInputPasswordData("reyshaka@#$_&030723","reyshaka@#$_&030723");
 
         //click button create account
         create.clickCreateBtn();
@@ -33,19 +31,16 @@ public class test_createAccount extends env_ {
     @Test
     public void CreateAccountWithEmailAlreadyExist () throws InterruptedException {
         driver.get(BaseUrl);
-        //create homepages object
+        //create object
         homepages home = new homepages(driver);
-        //click create an account
-        home.clickCreateAcc();
-        //create object createAaccount pages
         createAccountpages create = new createAccountpages(driver);
 
+        //click button create an account
+        home.clickCreateAcc();
         //Input valid information but email already exist
-        create.setInputFistName("Aditya");
-        create.setInputLastName("Pratama");
+        create.setInputNameData("Aditya", "Pratama");
         create.setInputEmail("aditya1995.jr@gmail.com");
-        create.setInputPassword("reyshaka@#$_&030723");
-        create.setInputConfirmPassword("reyshaka@#$_&030723");
+        create.setInputPasswordData("reyshaka@#$_&030723", "reyshaka@#$_&030723");
         //click button create account
         create.clickCreateBtn();
 
