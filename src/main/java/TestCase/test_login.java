@@ -12,7 +12,6 @@ import java.awt.*;
 import java.time.Duration;
 
 import static org.junit.Assert.assertEquals;
-
 public class test_login extends env_ {
     @Test
     public void SuccessfullyLogin() throws InterruptedException {
