@@ -37,7 +37,7 @@ public class shoppingCartpages {
     public void selectSizeItem (){
         driver.findElement(selectSize).click();
     }
-    By selectColor = By.xpath("//*[@id='option-label-color-93-item-53']");
+    By selectColor = By.xpath("//*[@id=\"option-label-color-93-item-52\"]");
     public void selectColorItem () {
         driver.findElement(selectColor).click();
     }
