@@ -7,5 +7,5 @@ public class checkoutpages {
     public checkoutpages(WebDriver driver){
         this.driver = driver;
     }
-    
+
 }

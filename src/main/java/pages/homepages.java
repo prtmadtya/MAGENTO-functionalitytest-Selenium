@@ -31,4 +31,14 @@ public class homepages {
     public void setGoTocollection(){
         driver.findElement(goTocollection).click();
     }
+
+    //view and edit item locator
+    By viewItem = By.xpath("//*[@id=\"minicart-content-wrapper\"]/div[2]/div[5]/div/a/span");
+    public void setViewItem(){
+        driver.findElement(viewItem).click();
+    }
+    By showCart = By.xpath("/html/body/div[2]/header/div[2]/div[1]/a");
+    public void showingCart (){
+        driver.findElement(showCart).click();
+    }
 }

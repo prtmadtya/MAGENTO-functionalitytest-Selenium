@@ -1,6 +1,7 @@
 package TestCase;
 import Config.env_;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -46,7 +47,7 @@ public class test_login extends env_ {
                 //verify require email should be filled
                 WebElement failedmessage = driver.findElement(By.id("email-error"));
                 String value = failedmessage.getText();
-                assertEquals("This is a required field.", value);
+                Assertions.assertEquals("This is a required field.", value);
                 String successLogin = home.getHeading();
                 if (value.equalsIgnoreCase(successLogin))
                     System.out.println("Test Failed: login success");

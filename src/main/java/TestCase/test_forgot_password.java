@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 
 public class test_forgot_password extends env_ {
     @Test
-    public void test_forgotPasswords () throws InterruptedException {
+    public void forgotPasswordstest () throws InterruptedException {
         driver.get(BaseUrl);
         homepages home = new homepages(driver);
         loginpages login = new loginpages(driver);
