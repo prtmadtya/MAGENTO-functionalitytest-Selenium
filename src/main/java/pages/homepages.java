@@ -9,6 +9,10 @@ public class homepages {
     public homepages(WebDriver driver){
         this.driver = driver;
     }
+    //locator profil, logout, wish at homepages
+    By clickdrop = By.xpath("//div[@class='panel header']//button[@type='button']"); public void clickDropdown (){driver.findElement(clickdrop).click();}
+    By Clickprofil = By.xpath("//div[@aria-hidden='false']//a[normalize-space()='My Account']"); public void clickProfile(){driver.findElement(Clickprofil).click();}
+
     //locator for create account
     By createAcc = By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[3]/a");
     By loginBtn = By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/a");

@@ -12,7 +12,7 @@ public class env_ {
         //set driver location path
         System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
         driver = new ChromeDriver();
-        driver.manage().window();
+        driver.manage().window().maximize();
     }
 
     protected String BaseUrl = ("https://magento.softwaretestingboard.com/");
