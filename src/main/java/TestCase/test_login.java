@@ -25,7 +25,7 @@ public class test_login extends env_ {
         loginpages login = new loginpages(driver);
         //input valid information
         login.inputEmail("aditya1995.jr@gmail.com");
-        login.inputPass("reyshaka@#$_&030723");
+        login.inputPass("reyshaka030723@");
         //click login button
         login.setSignInbtn();
         Thread.sleep(4000);
@@ -40,7 +40,7 @@ public class test_login extends env_ {
             //Click sign in
             home.clickLogin();
             //input Password
-            login.inputPass("reyshaka@#$_&030723");
+            login.inputPass("reyshaka030723@");
             //click login button
             login.setSignInbtn();
             Thread.sleep(3000);
@@ -65,7 +65,7 @@ public class test_login extends env_ {
         //input invalid email format
         login.inputEmail("@testing.com");
         //input valid password
-        login.inputPass("reyshaka@#$_&030723");
+        login.inputPass("reyshaka030723@");
         //click login button
         login.setSignInbtn();
         Thread.sleep(5000);
@@ -91,7 +91,7 @@ public class test_login extends env_ {
         //input invalid email format
         login.inputEmail("aditya1995.jr4@gmail.com");
         //input valid password
-        login.inputPass("reyshaka@#$_&030723");
+        login.inputPass("reyshaka030723@");
         //click login button
         login.setSignInbtn();
         //verify error email format
