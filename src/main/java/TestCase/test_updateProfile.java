@@ -8,8 +8,6 @@ import pages.homepages;
 import pages.loginpages;
 import pages.profile_pages;
 
-import java.util.SplittableRandom;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class test_updateProfile extends env_ {
